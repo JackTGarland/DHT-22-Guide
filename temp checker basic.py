@@ -18,7 +18,6 @@ if humidity is not None and temperature is not None:
         f = open("temp.txt", "w")
         f.write("\n")
         f.write(writedata)
-        print(writedata)
 else:
         print("Failed to retrieve data from humidity sensor")
 
