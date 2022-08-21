@@ -13,8 +13,8 @@ UNLESS You use the renamer script
 I would recomend using crontab for this, below is what I have mine running on, with the temp checking script running every 5 minuites. 
 Then the renamer to store it in a seprate location running 2 minuites to midnight.
 
-`*/5 * * * * python3 humidity2.py
-58 23 * * * python3 rename.py`
+`*/5 * * * * python3 humidity2.py`
+`58 23 * * * python3 rename.py`
 
 You will need to add the file path to these locations if they are not in your home derectory. You should not need sudo for these scripts eaither so just `crontab -e` will work.
 
