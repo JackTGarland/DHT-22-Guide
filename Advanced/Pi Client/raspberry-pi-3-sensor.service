@@ -1,0 +1,21 @@
+[Unit]
+Description=Raspberry Pi 3 DHT22 Sensor API
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=UsernameHere
+WorkingDirectory=/Path/To/file/
+ExecStart=/usr/bin/python3 /Path/To/file/raspberry_pi_3_sensor_api.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables (optional)
+Environment=PYTHONUNBUFFERED=1
+Environment=FLASK_ENV=production
+
+[Install]
+WantedBy=multi-user.target
