@@ -5,7 +5,7 @@ This is a simple set up for the DHT-22 thermometer that can be used with the ras
 
 I was not a fan of the guides that were out there so I set out to make my own building off the guides.
 
-There are two forms of this, the basic and advanced.
+There are two forms of this, the basic and advanced. The basic has comments from 3 years ago. I've learned more since then so the Advanced options have less comments and being honest was written with AI help.
 
 The Basic will just print the information and write it to a text file that will just keep growing till it reaches max file size.
 UNLESS You use the renamer script
@@ -13,8 +13,8 @@ UNLESS You use the renamer script
 I would recomend using crontab for this, below is what I have mine running on, with the temp checking script running every 5 minuites. 
 Then the renamer to store it in a seprate location running 2 minuites to midnight.
 
-`*/5 * * * * python3 humidity2.py
-58 23 * * * python3 rename.py`
+`*/5 * * * * python3 humidity2.py`
+`58 23 * * * python3 rename.py`
 
 You will need to add the file path to these locations if they are not in your home derectory. You should not need sudo for these scripts eaither so just `crontab -e` will work.
 
@@ -46,7 +46,7 @@ In the server file you will see that each device uses a seprate port. You can us
 
 # website usage
 
-![Logo](https://i.imgur.com/WJi3f6x.png)
+![Logo](https://raw.githubusercontent.com/JackTGarland/DHT-22-Guide/refs/heads/main/Temprature%20website.PNG)
 
 
 Force Refresh fetches data, otherwise it will ping the devices every 5 minuites.
@@ -56,3 +56,7 @@ Reload page just dose an F5 assuming that this will be displayed on a tablet or 
 ## Installation
 
 No install script, as of yet all manual sadly, though hopfully self explntory. 
+You will need to run `pip install flask` on the client and server but not the Pico if you are uesing that.
+
+The service files you need to edit the path to wherever you stored the files and the username you want the service to run on. This can be `pi` unless you have removed that user.
+
